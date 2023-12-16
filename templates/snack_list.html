@@ -1,0 +1,9 @@
+{%  extends "base.html" %}
+
+{%  block content %}
+    {%  for snack in snacks %}
+        <h2>
+            {{ snack.title }}
+        </h2>
+    {%  endfor %}
+{%  endblock content %}
