@@ -14,3 +14,10 @@ class SnackDetailView(DetailView):
     model = Snack
 
 
+class SnackCreateView(CreateView):
+    template_name = "snack_create.html"
+    model = Snack
+
+    fields = ["title", "purchaser", "description"]
+
+
