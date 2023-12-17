@@ -71,8 +71,8 @@ class SnacksReadTests(TestCase):
         snacks = response.context["object_list"]
         self.assertEqual(len(snacks), 1)
         self.assertEqual(snacks[0].title, "pickle")
-        self.assertEqual(snacks[0].description, "vinegary")
-        self.assertEqual(snacks[0].purchaser, "tester")
+        self.assertEqual(snacks[0].description, "")
+        self.assertEqual(snacks[0].purchaser.username, "tester")
 
     def test_detail_page_status_code(self):
         url = reverse("snack_detail", args=(1,))
@@ -90,6 +90,6 @@ class SnacksReadTests(TestCase):
         response = self.client.get(url)
         snack = response.context["snack"]
         self.assertEqual(snack.title, "pickle")
-        # self.assertEqual(snack.description, "")
+        self.assertEqual(snack.description, "")
         self.assertEqual(snack.purchaser.username, "tester")
 
