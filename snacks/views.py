@@ -20,6 +20,7 @@ class SnackCreateView(CreateView):
     model = Snack
 
     fields = ["title", "purchaser", "description"]
+    success_url = reverse_lazy("snack_list")
 
 
 class SnackUpdateView(UpdateView):

@@ -8,6 +8,10 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <a href="{% url 'snack_list' %}">Home</a>
+        <a href="{% url 'snack_create' %}">Create</a>
+    </nav>
     <h1>All of the Snacks</h1>
     {%  block content %}
 

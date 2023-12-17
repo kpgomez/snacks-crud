@@ -4,7 +4,16 @@
     <div>
         <h1>Title: {{ snack.title }}</h1>
         <p>Purchaser: {{ snack.purchaser }}</p>
-        <p>Description: </p>
-        <p>{{ snack.description }}</p>
+        <p>Description: {{ snack.description }}</p>
+        <button>
+            <a href="{% url 'snack_update' snack.pk %}" style="text-decoration:none">Update</a>
+        </button>
+        <button>
+            <a href="{%  url 'snack_delete' snack.pk %}" style="text-decoration:none">Delete</a>
+        </button>
+{#        <form method="post" action="{%  url 'snack_update' snack.pk %}">#}
+{#            {% csrf_token %}#}
+{#            <button type="submit">Update</button>#}
+{#        </form>#}
     </div>
 {% endblock content %}
